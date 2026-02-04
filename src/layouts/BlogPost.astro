@@ -37,9 +37,9 @@ const { title, description, pubDate, updatedDate, heroImage, ogImage } = Astro.p
 				color: var(--color-text-main);
 				line-height: 1.8;
 			}
-			.prose p {
-				margin-bottom: 1.5em;
-			}
+		.prose :global(p) {
+			margin-bottom: 1.5em;
+		}
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
