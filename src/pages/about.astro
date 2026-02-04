@@ -2,13 +2,13 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`About - ${SITE_TITLE}`} description="About Kristian Bjornebraten" />
+		<BaseHead title={`About - ${SITE_TITLE}`} description="About Kristian Bjornebraten - Infrastructure Engineer, Cloud Architect, and DevOps enthusiast" />
 		<style>
 			main {
 				width: 720px;
@@ -16,82 +16,159 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				margin: auto;
 				padding: 3em 1em;
 			}
-            .about-content {
-                line-height: 1.8;
-                font-size: 1.125rem;
-                color: var(--color-text-main);
-            }
-            h1 {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-                color: var(--color-text-main);
-            }
-            h2 {
-                margin-top: 2em;
-                margin-bottom: 1em;
-                font-size: 1.5rem;
-                color: var(--color-text-main);
-            }
-            p {
-                margin-bottom: 1.5em;
-            }
-            a {
-                color: var(--color-accent);
-                text-decoration: none;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-            ul {
-                margin-bottom: 1.5em;
-                padding-left: 1.5em;
-            }
-            li {
-                margin-bottom: 0.5em;
-            }
-            strong {
-                color: var(--color-text-main);
-                font-weight: 700;
-            }
+			.about-header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+			.about-avatar {
+				width: 180px;
+				height: 180px;
+				border-radius: 50%;
+				border: 3px solid var(--color-accent);
+				margin-bottom: 1.5rem;
+			}
+			.about-content {
+				line-height: 1.8;
+				font-size: 1.1rem;
+				color: var(--color-text-main);
+			}
+			h1 {
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
+				color: var(--color-text-main);
+			}
+			.tagline {
+				color: var(--color-text-muted);
+				font-size: 1.1rem;
+				margin-bottom: 2rem;
+			}
+			h2 {
+				margin-top: 2.5rem;
+				margin-bottom: 1rem;
+				font-size: 1.4rem;
+				color: var(--color-accent);
+				border-bottom: 1px solid var(--color-border);
+				padding-bottom: 0.5rem;
+			}
+			p {
+				margin-bottom: 1.25em;
+			}
+			a {
+				color: var(--color-accent);
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			ul {
+				margin-bottom: 1.5em;
+				padding-left: 1.5em;
+			}
+			li {
+				margin-bottom: 0.5em;
+			}
+			strong {
+				color: var(--color-text-main);
+				font-weight: 600;
+			}
+			.highlight {
+				background: var(--color-bg-alt);
+				padding: 1.5rem;
+				border-radius: 8px;
+				border-left: 3px solid var(--color-accent);
+				margin: 2rem 0;
+			}
+			.tech-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-top: 1rem;
+			}
+			.tech-tag {
+				background: var(--color-bg-alt);
+				color: var(--color-text-muted);
+				padding: 0.25rem 0.75rem;
+				border-radius: 20px;
+				font-size: 0.85rem;
+				border: 1px solid var(--color-border);
+			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-            <section class="about-content">
-			    <h1>About Me</h1>
-                <p>
-                    Hi, I'm <strong>Kristian Bjornebraten</strong>. I'm a software engineer and consultant based in Norway, dedicated to crafting high-quality digital experiences.
-                </p>
-                <p>
-                    With years of experience in the industry, I specialize in building robust, scalable web applications and helping teams improve their engineering practices. 
-                    My approach combines technical expertise with a pragmatic focus on delivering real value.
-                </p>
-                
-                <h2>What I Do</h2>
-                <p>
-                    Currently, I operate as an independent consultant, partnering with companies to solve complex technical challenges. 
-                    Beyond consulting, I am the creator of <a href="https://tidwerk.com" target="_blank"><strong>TidWerk</strong></a>, 
-                    a specialized time-tracking solution designed to meet the specific needs of consultants and agencies.
-                </p>
+			<div class="about-header">
+				<img src="/avatar.png" alt="Kristian Bjornebraten" class="about-avatar" />
+				<h1>Kristian Bjornebraten</h1>
+				<p class="tagline">Infrastructure Engineer · Cloud Architect · DevOps Enthusiast</p>
+			</div>
 
-                <h2>Technical Focus</h2>
-                <p>
-                    I have a strong passion for modern web technologies and the evolving JavaScript ecosystem. 
-                    I prefer tools that offer excellent developer experience without compromising on performance:
-                </p>
-                <ul>
-                    <li><strong>Frontend:</strong> Svelte, React, Astro</li>
-                    <li><strong>Languages:</strong> TypeScript, Rust, Go</li>
-                    <li><strong>Platform:</strong> Node.js, Cloud Infrastructure</li>
-                </ul>
+			<section class="about-content">
+				<p>
+					With <strong>13 years of experience in IT</strong>, I've built extensive knowledge across complex IT infrastructure. 
+					In recent years, I've specialized in <strong>cloud technology, DevOps, Infrastructure as Code (IaC), operations, 
+					application management, client management, and technical leadership</strong>.
+				</p>
 
-                <h2>Connect</h2>
-                <p>
-                    I'm always open to discussing new projects, technology trends, or consulting opportunities. 
-                    Feel free to explore my <a href="/blog">blog</a> to see what I've been working on.
-                </p>
-            </section>
+				<div class="highlight">
+					When I'm not architecting cloud solutions, you'll find me <strong>vibe coding</strong> late into the night—headphones on, 
+					coffee in hand, building side projects like <a href="https://tidwerk.com">TidWerk</a>. I'm deep into the 
+					<strong>MCP (Model Context Protocol) server</strong> ecosystem, exploring how AI agents can supercharge developer workflows. 
+					Yes, I'm that kind of nerd.
+				</div>
+
+				<h2>What I Do</h2>
+				<p>
+					Most recently, I worked as an <strong>Infrastructure Engineer and Delivery Manager at Bane NOR</strong>, 
+					where I helped strengthen the organization's Azure cloud platform. As an architect, I focused on designing, 
+					developing, and troubleshooting solutions that ensure secure and efficient communication—both within Azure 
+					and between cloud and on-premises systems. I implemented solutions meeting strict security and scalability 
+					requirements while ensuring compliance with zone models and policies.
+				</p>
+				<p>
+					As Delivery Manager, I took responsibility for delivering cloud-based solutions with emphasis on time management, 
+					cost efficiency, and alignment with business objectives. Through agile methodologies and DevOps best practices, 
+					I optimized processes and strengthened the team's capacity to deliver reliable solutions.
+				</p>
+
+				<h2>Previous Experience</h2>
+				<ul>
+					<li><strong>Platform Engineer at Santander Consumer Bank</strong> — Designed, developed, and tested Terraform code, contributing to architecture and technical assessments</li>
+					<li><strong>Tech Lead at Altinn</strong> — Led the infrastructure team and managed the hybrid platform</li>
+					<li><strong>IaC Developer at NHN (Health Analytics Platform)</strong> — Terraform development for healthcare infrastructure</li>
+					<li><strong>Cloud Operator at Ironstone</strong> — Azure operations and continuous process improvement</li>
+				</ul>
+
+				<h2>Tech Stack</h2>
+				<p>I'm most at home with:</p>
+				<div class="tech-tags">
+					<span class="tech-tag">Azure</span>
+					<span class="tech-tag">Terraform</span>
+					<span class="tech-tag">Kubernetes</span>
+					<span class="tech-tag">DevOps</span>
+					<span class="tech-tag">TypeScript</span>
+					<span class="tech-tag">Svelte</span>
+					<span class="tech-tag">Python</span>
+					<span class="tech-tag">Go</span>
+					<span class="tech-tag">CI/CD</span>
+					<span class="tech-tag">MCP Servers</span>
+				</div>
+
+				<h2>How I Work</h2>
+				<p>
+					I'm <strong>productive, service-minded, analytical, and detail-oriented</strong>. I work in a structured and 
+					goal-oriented manner to ensure tasks are completed in line with both technical and business expectations. 
+					Whether it's designing enterprise infrastructure or hacking on personal projects at 2 AM, I bring the same 
+					level of dedication and curiosity.
+				</p>
+
+				<h2>Let's Connect</h2>
+				<p>
+					I'm always open to discussing cloud architecture, DevOps practices, or nerding out about the latest in 
+					AI-assisted development. Check out my <a href="/blog">blog</a> for thoughts on tech, or reach out if 
+					you want to collaborate.
+				</p>
+			</section>
 		</main>
 		<Footer />
 	</body>
