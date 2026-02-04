@@ -11,7 +11,7 @@ const projects = [
 		period: "09.2025 – 10.2025",
 		description: "Designed solution architecture based on Microsoft Cloud Adoption Framework (CAF) for a hybrid delivery spanning public, private, and sovereign cloud. Assessed the application portfolio and developed migration strategies covering Azure tenant-to-tenant, on-premise transitions, and containerization. Analyzed scope, risk, and technical dependencies related to identity, SaaS solutions, and cloud applications. Delivered a holistic and scalable solution design with emphasis on security, automation, and efficient operations in Microsoft-based environments.",
 		technologies: ["Azure", "CAF", "Hybrid Cloud", "Container Migration", "Identity"],
-		type: "telecom"
+		type: "enterprise"
 	},
 	{
 		client: "Bane NOR",
@@ -19,7 +19,7 @@ const projects = [
 		period: "02.2024 – 06.2025",
 		description: "Worked in dual roles, handling both architecture and development of infrastructure services in Azure, as well as serving as delivery manager for cloud projects. As Infrastructure Engineer, established services and components in Azure, ensuring cross-zone communication and hybrid cloud-to-on-prem connectivity. Designed secure and scalable solutions with high degree of automation and documentation. Led a subscription migration project to consolidate Azure subscriptions into an established landing zone architecture delivered as managed service. Conducted assessments including workload mapping and classification. Established new subscriptions using Terraform, moved subscriptions to appropriate management groups, and implemented Microsoft Defender for Cloud standardization and Azure Policies. As Delivery Manager, led teams through implementations, coordinated efforts across projects, and maintained dialogue with internal development teams and external vendors.",
 		technologies: ["Azure", "Entra ID", "Active Directory", "Terraform", "Azure DevOps", "Azure Automation", "Azure Storage", "Azure Networking", "GitLab"],
-		type: "public"
+		type: "government"
 	},
 	{
 		client: "Statkraft",
@@ -43,7 +43,7 @@ const projects = [
 		period: "09.2021 – 06.2022",
 		description: "Led infrastructure for the Altinn 2.0 platform, responsible for operational management, further development, and technical strategy. Coordinated a team working on both operations and development, actively participating in stakeholder dialogue to evolve the platform. Implemented DevOps practices and managed hybrid infrastructure, contributing significantly to technological direction and improvements in collaboration methods.",
 		technologies: ["Azure", "Azure CAF", "Terraform", "Azure DevOps", "Well Architected Framework"],
-		type: "public"
+		type: "government"
 	},
 	{
 		client: "Norsk Helsenett",
@@ -59,7 +59,7 @@ const projects = [
 		period: "04.2020 – 11.2020",
 		description: "Participated in operations and 3rd line support for the Azure platform. Contributed to process development and collaborated with sales and customer teams. Conducted analyses and improvements on existing customer solutions and served as technical advisor. Also participated in Microsoft partnership campaigns, contributing to the presale phase to promote Azure services.",
 		technologies: ["Azure", "Microsoft 365", "PowerShell"],
-		type: "msp"
+		type: "enterprise"
 	},
 	{
 		client: "Optimera",
@@ -75,7 +75,7 @@ const projects = [
 		period: "11.2015 – 02.2018",
 		description: "Worked with customer adaptations and support for technical products. Participated in projects, installations, and operation of retail applications. Responsible for documentation and training. Conducted technical analyses and developed improvement proposals for products in dialogue with vendors.",
 		technologies: ["Retail Systems", "Technical Support", "Documentation"],
-		type: "retail"
+		type: "enterprise"
 	},
 	{
 		client: "KLP",
@@ -91,18 +91,15 @@ const projects = [
 		period: "01.2013 – 12.2014",
 		description: "Full operations and support for inter-municipal IT including networks, servers, and applications. Quickly promoted to 2nd line, working with AD, GPO, SCCM, and PowerShell. Implemented changes in structure and configuration, delivering high resolution rates on complex issues.",
 		technologies: ["Active Directory", "GPO", "SCCM", "PowerShell", "Networking"],
-		type: "public"
+		type: "government"
 	}
 ];
 
 const typeColors: Record<string, string> = {
-	public: "#22c55e",
+	government: "#22c55e",
 	finance: "#3b82f6",
 	healthcare: "#ec4899",
-	enterprise: "#f59e0b",
-	msp: "#8b5cf6",
-	retail: "#06b6d4",
-	telecom: "#f97316"
+	enterprise: "#f59e0b"
 };
 ---
 
@@ -301,16 +298,12 @@ const typeColors: Record<string, string> = {
 
 			<div class="legend">
 				<div class="legend-item">
-					<span class="legend-dot" style={`background: ${typeColors.telecom}`}></span>
-					<span>Telecom</span>
-				</div>
-				<div class="legend-item">
-					<span class="legend-dot" style={`background: ${typeColors.public}`}></span>
-					<span>Public Sector</span>
+					<span class="legend-dot" style={`background: ${typeColors.government}`}></span>
+					<span>Government</span>
 				</div>
 				<div class="legend-item">
 					<span class="legend-dot" style={`background: ${typeColors.finance}`}></span>
-					<span>Finance</span>
+					<span>Banking & Financial Services</span>
 				</div>
 				<div class="legend-item">
 					<span class="legend-dot" style={`background: ${typeColors.healthcare}`}></span>
