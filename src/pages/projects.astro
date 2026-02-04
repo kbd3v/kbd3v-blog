@@ -11,7 +11,7 @@ const projects = [
 		period: "09.2025 – 10.2025",
 		description: "Designed hybrid cloud architecture spanning public, private, and sovereign cloud using Microsoft CAF. Developed migration strategies for tenant-to-tenant, on-premise, and containerization scenarios. Delivered scalable solution design focused on security and automation.",
 		technologies: ["Azure", "CAF", "Hybrid Cloud", "Container Migration", "Identity"],
-		type: "enterprise"
+		type: "it"
 	},
 	{
 		client: "Bane NOR",
@@ -27,7 +27,7 @@ const projects = [
 		period: "10.2023 – 01.2024",
 		description: "Owned CI/CD pipeline development for an enterprise data platform. Built infrastructure using Terraform and Azure DevOps, established reusable templates for data products, and automated access control. Led code reviews and knowledge transfer.",
 		technologies: ["Terraform", "Azure DevOps", "Azure CLI", "Data Factory", "PaaS", "IaaS"],
-		type: "enterprise"
+		type: "energy"
 	},
 	{
 		client: "Santander Consumer Bank",
@@ -67,7 +67,7 @@ const projects = [
 		period: "05.2018 – 03.2020",
 		description: "Managed operations across 100+ Windows servers supporting thousands of users. Achieved ~10× faster campaign application performance through SQL optimization. Reduced ERP onboarding from 7 minutes to under 1 minute via API automation. Migrated 30+ servers and built custom PowerShell tooling for complex print infrastructure.",
 		technologies: ["MS SQL", "Windows Server", "PowerShell", "ERP"],
-		type: "enterprise"
+		type: "construction"
 	},
 	{
 		client: "StrongPoint",
@@ -83,7 +83,7 @@ const projects = [
 		period: "01.2015 – 06.2015",
 		description: "Worked with mobile telephony, onboarding, and internal support for various systems. Also assisted with access management and device configuration for new employees.",
 		technologies: ["Mobile Device Management", "Access Control"],
-		type: "finance"
+		type: "insurance"
 	},
 	{
 		client: "Digitale Gardermoen",
@@ -98,7 +98,11 @@ const projects = [
 const typeColors: Record<string, string> = {
 	government: "#22c55e",
 	finance: "#3b82f6",
+	insurance: "#14b8a6",
 	healthcare: "#ec4899",
+	it: "#06b6d4",
+	energy: "#facc15",
+	construction: "#78716c",
 	enterprise: "#f59e0b"
 };
 
@@ -412,7 +416,7 @@ const typeColors: Record<string, string> = {
 						<span class="stat-label">Years</span>
 					</div>
 					<div class="stat">
-						<span class="stat-value">4</span>
+						<span class="stat-value">8</span>
 						<span class="stat-label">Sectors</span>
 					</div>
 				</div>
@@ -425,11 +429,27 @@ const typeColors: Record<string, string> = {
 				</div>
 				<div class="legend-item">
 					<span class="legend-dot" style={`background: ${typeColors.finance}`}></span>
-					<span>Banking & Financial Services</span>
+					<span>Banking</span>
+				</div>
+				<div class="legend-item">
+					<span class="legend-dot" style={`background: ${typeColors.insurance}`}></span>
+					<span>Insurance & Pension</span>
 				</div>
 				<div class="legend-item">
 					<span class="legend-dot" style={`background: ${typeColors.healthcare}`}></span>
 					<span>Healthcare</span>
+				</div>
+				<div class="legend-item">
+					<span class="legend-dot" style={`background: ${typeColors.it}`}></span>
+					<span>Information Technologies</span>
+				</div>
+				<div class="legend-item">
+					<span class="legend-dot" style={`background: ${typeColors.energy}`}></span>
+					<span>Energy</span>
+				</div>
+				<div class="legend-item">
+					<span class="legend-dot" style={`background: ${typeColors.construction}`}></span>
+					<span>Construction</span>
 				</div>
 				<div class="legend-item">
 					<span class="legend-dot" style={`background: ${typeColors.enterprise}`}></span>
