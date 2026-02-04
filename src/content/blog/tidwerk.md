@@ -14,7 +14,6 @@ You can check it out live at [tidwerk.com](https://tidwerk.com).
 
 As a consultant, your time is your product. But tracking that time shouldn't be a job in itself. TidWerk focuses on getting out of your way while providing the specific features that matter for billing:
 
-- **Persistent Timer:** Start a timer on your laptop, and see it running on your phone. It syncs across devices via the database, so you never lose track of a session.
 - **Client-Specific Rates:** Not all hours are equal. TidWerk handles regular, overtime, and weekend rates per client, with automatic fallbacks (like 1.5x for overtime) if you haven't set a custom rate.
 - **Absence Tracking:** Billing is only half the story. Tracking vacation, sick leave, and public holidays in the same interface makes monthly reporting seamless.
 - **Automated Reporting:** Generate formatted HTML reports for yourself, your manager, or your clients. You can even set them to auto-send on the last weekday of the month.
