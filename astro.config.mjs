@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://kbd3v.github.io',
-	base: '/kbd3v-engineering',
+	site: 'https://kbd3v.com',
+	// base removed - root domain now
 	integrations: [mdx(), sitemap()],
 });

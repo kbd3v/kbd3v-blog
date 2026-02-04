@@ -43,12 +43,12 @@ const posts = (await getCollection('blog'))
 			<section class="latest-posts">
 				<div class="section-header">
 					<h2>Latest Posts</h2>
-					<a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog`} class="view-all">View all &rarr;</a>
+					<a href="/blog" class="view-all">View all &rarr;</a>
 				</div>
 				<ul class="post-list">
 					{posts.map((post) => (
 						<li>
-							<a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.id}/`} class="post-link">
+							<a href={`/blog/${post.id}/`} class="post-link">
 								<h3 class="post-title">{post.data.title}</h3>
 								<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
 							</a>
