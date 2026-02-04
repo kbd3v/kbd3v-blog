@@ -257,6 +257,88 @@ const typeColors: Record<string, string> = {
 				border-radius: 50%;
 			}
 
+			.stats {
+				display: flex;
+				gap: 2rem;
+				margin-top: 1.5rem;
+			}
+
+			.stat {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.stat-value {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: var(--color-text-main);
+			}
+
+			.stat-label {
+				font-size: 0.8rem;
+				color: var(--color-text-muted);
+			}
+
+			.cta {
+				margin-top: 3rem;
+				padding: 2rem;
+				background: var(--color-bg-alt);
+				border-radius: 12px;
+				border: 1px solid var(--color-border);
+				text-align: center;
+			}
+
+			.cta h2 {
+				font-size: 1.25rem;
+				margin: 0 0 0.5rem 0;
+				color: var(--color-text-main);
+			}
+
+			.cta p {
+				color: var(--color-text-muted);
+				margin: 0 0 1.25rem 0;
+				font-size: 0.95rem;
+			}
+
+			.cta-links {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.cta-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4rem;
+				padding: 0.6rem 1.2rem;
+				border-radius: 6px;
+				font-size: 0.9rem;
+				font-weight: 500;
+				text-decoration: none;
+				transition: all 0.2s ease;
+			}
+
+			.cta-link.primary {
+				background: var(--color-accent);
+				color: white;
+			}
+
+			.cta-link.primary:hover {
+				filter: brightness(1.1);
+			}
+
+			.cta-link.secondary {
+				background: var(--color-bg);
+				border: 1px solid var(--color-border);
+				color: var(--color-text-main);
+			}
+
+			.cta-link.secondary:hover {
+				border-color: var(--color-accent);
+				color: var(--color-accent);
+			}
+
 			@media (max-width: 600px) {
 				.page-header h1 {
 					font-size: 1.75rem;
@@ -264,6 +346,14 @@ const typeColors: Record<string, string> = {
 
 				.page-header p {
 					font-size: 1rem;
+				}
+
+				.stats {
+					gap: 1.5rem;
+				}
+
+				.stat-value {
+					font-size: 1.25rem;
 				}
 
 				.timeline {
@@ -287,6 +377,22 @@ const typeColors: Record<string, string> = {
 				.description {
 					font-size: 0.9rem;
 				}
+
+				.cta {
+					padding: 1.5rem;
+				}
+
+				.cta h2 {
+					font-size: 1.1rem;
+				}
+
+				.cta-links {
+					flex-direction: column;
+				}
+
+				.cta-link {
+					justify-content: center;
+				}
 			}
 		</style>
 	</head>
@@ -296,6 +402,20 @@ const typeColors: Record<string, string> = {
 			<div class="page-header">
 				<h1>Projects</h1>
 				<p>13 years of building, operating, and leading IT infrastructure across public sector, finance, healthcare, and enterprise.</p>
+				<div class="stats">
+					<div class="stat">
+						<span class="stat-value">11</span>
+						<span class="stat-label">Clients</span>
+					</div>
+					<div class="stat">
+						<span class="stat-value">13</span>
+						<span class="stat-label">Years</span>
+					</div>
+					<div class="stat">
+						<span class="stat-value">4</span>
+						<span class="stat-label">Sectors</span>
+					</div>
+				</div>
 			</div>
 
 			<div class="legend">
@@ -337,6 +457,15 @@ const typeColors: Record<string, string> = {
 						</div>
 					</div>
 				))}
+			</div>
+
+			<div class="cta">
+				<h2>Looking for expertise?</h2>
+				<p>I'm available for consulting engagements through Nibble, where I'm a Partner.</p>
+				<div class="cta-links">
+					<a href="mailto:kristian@nibble.as" class="cta-link primary">Get in touch</a>
+					<a href="https://nibble.as" target="_blank" rel="noopener noreferrer" class="cta-link secondary">Visit Nibble</a>
+				</div>
 			</div>
 		</main>
 		<Footer />
