@@ -1,13 +1,98 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="About Kristian Bjornebraten"
-	pubDate={new Date('August 08 2021')}
->
-	<p>
-		Engineering leader and developer.
-	</p>
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About - ${SITE_TITLE}`} description="About Kristian Bjornebraten" />
+		<style>
+			main {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 3em 1em;
+			}
+            .about-content {
+                line-height: 1.8;
+                font-size: 1.125rem;
+                color: var(--color-text-main);
+            }
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: var(--color-text-main);
+            }
+            h2 {
+                margin-top: 2em;
+                margin-bottom: 1em;
+                font-size: 1.5rem;
+                color: var(--color-text-main);
+            }
+            p {
+                margin-bottom: 1.5em;
+            }
+            a {
+                color: var(--color-accent);
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            ul {
+                margin-bottom: 1.5em;
+                padding-left: 1.5em;
+            }
+            li {
+                margin-bottom: 0.5em;
+            }
+            strong {
+                color: var(--color-text-main);
+                font-weight: 700;
+            }
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+            <section class="about-content">
+			    <h1>About Me</h1>
+                <p>
+                    Hi, I'm <strong>Kristian Bjornebraten</strong>. I'm a software engineer and consultant based in Norway, dedicated to crafting high-quality digital experiences.
+                </p>
+                <p>
+                    With years of experience in the industry, I specialize in building robust, scalable web applications and helping teams improve their engineering practices. 
+                    My approach combines technical expertise with a pragmatic focus on delivering real value.
+                </p>
+                
+                <h2>What I Do</h2>
+                <p>
+                    Currently, I operate as an independent consultant, partnering with companies to solve complex technical challenges. 
+                    Beyond consulting, I am the creator of <a href="https://tidwerk.com" target="_blank"><strong>TidWerk</strong></a>, 
+                    a specialized time-tracking solution designed to meet the specific needs of consultants and agencies.
+                </p>
+
+                <h2>Technical Focus</h2>
+                <p>
+                    I have a strong passion for modern web technologies and the evolving JavaScript ecosystem. 
+                    I prefer tools that offer excellent developer experience without compromising on performance:
+                </p>
+                <ul>
+                    <li><strong>Frontend:</strong> Svelte, React, Astro</li>
+                    <li><strong>Languages:</strong> TypeScript, Rust, Go</li>
+                    <li><strong>Platform:</strong> Node.js, Cloud Infrastructure</li>
+                </ul>
+
+                <h2>Connect</h2>
+                <p>
+                    I'm always open to discussing new projects, technology trends, or consulting opportunities. 
+                    Feel free to explore my <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog`}>blog</a> to see what I've been working on.
+                </p>
+            </section>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -3,6 +3,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
 <!doctype html>
@@ -24,6 +30,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					Exploring code, architecture, and the future of software.
 				</p>
 			</div>
+
+			<section class="intro-section">
+				<p>
+					This blog serves as a documentation of my journey through software engineering. 
+					I write about the technologies I use, the challenges I face building products like <strong>TidWerk</strong>, 
+					and my thoughts on the software industry. Expect deep dives into <strong>Svelte</strong>, <strong>TypeScript</strong>, 
+					and modern web architecture.
+				</p>
+			</section>
+
+			<section class="latest-posts">
+				<div class="section-header">
+					<h2>Latest Posts</h2>
+					<a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog`} class="view-all">View all &rarr;</a>
+				</div>
+				<ul class="post-list">
+					{posts.map((post) => (
+						<li>
+							<a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.id}/`} class="post-link">
+								<h3 class="post-title">{post.data.title}</h3>
+								<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
 		</main>
 		<Footer />
 	</body>
@@ -35,7 +67,89 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		padding: 4rem 0;
+		padding: 4rem 1rem 3rem;
+	}
+
+	.intro-section {
+		max-width: 720px;
+		margin: 0 auto 3rem;
+		padding: 0 1rem;
+		text-align: center;
+		font-size: 1.125rem;
+		line-height: 1.6;
+		color: var(--color-text-main);
+	}
+
+	.latest-posts {
+		max-width: 720px;
+		margin: 0 auto 4rem;
+		padding: 0 1rem;
+	}
+
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid var(--color-border);
+		padding-bottom: 0.5rem;
+	}
+
+	.section-header h2 {
+		font-size: 1.5rem;
+		color: var(--color-text-main);
+		margin: 0;
+	}
+
+	.view-all {
+		color: var(--color-accent);
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.view-all:hover {
+		text-decoration: underline;
+	}
+
+	.post-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.post-list li {
+		margin-bottom: 1rem;
+	}
+
+	.post-link {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		text-decoration: none;
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		background: var(--color-bg-alt);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.post-link:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	}
+
+	.post-title {
+		margin: 0;
+		font-size: 1.1rem;
+		color: var(--color-text-main);
+		font-weight: 600;
+	}
+
+	.post-date {
+		font-size: 0.85rem;
+		color: var(--color-text-muted);
+		white-space: nowrap;
+		margin-left: 1rem;
 	}
 
 	.avatar-container {
@@ -71,5 +185,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		color: var(--color-text-muted);
 		max-width: 600px;
 		line-height: 1.6;
+	}
+
+	@media (max-width: 600px) {
+		.post-link {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.post-date {
+			margin-left: 0;
+			margin-top: 0.25rem;
+		}
 	}
 </style>
