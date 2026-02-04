@@ -25,8 +25,8 @@ const projects = [
 		client: "Statkraft",
 		roles: ["DevOps Engineer"],
 		period: "10.2023 – 01.2024",
-		description: "Key contributor in establishing a data platform. Developed CI/CD pipelines for DataBricks and Data Factory using Terraform and Azure DevOps. Set up automation for access control with Azure AD and implemented standardized templates for data products. The platform laid the foundation for scalability, collaboration, and cost efficiency through automation and centralized management. Also responsible for code reviews and knowledge transfer within the team.",
-		technologies: ["Terraform", "Azure DevOps", "Azure CLI", "DataBricks", "Data Factory", "PaaS", "IaaS"],
+		description: "Key contributor in establishing a data platform. Developed CI/CD pipelines for Data Factory using Terraform and Azure DevOps. Set up automation for access control with Azure AD and implemented standardized templates for data products. The platform laid the foundation for scalability, collaboration, and cost efficiency through automation and centralized management. Also responsible for code reviews and knowledge transfer within the team.",
+		technologies: ["Terraform", "Azure DevOps", "Azure CLI", "Data Factory", "PaaS", "IaaS"],
 		type: "enterprise"
 	},
 	{
@@ -101,6 +101,37 @@ const typeColors: Record<string, string> = {
 	healthcare: "#ec4899",
 	enterprise: "#f59e0b"
 };
+
+const techStack = [
+	{
+		category: "Cloud & Infrastructure",
+		items: ["Azure", "Hybrid Cloud", "Landing Zones", "Azure Networking"]
+	},
+	{
+		category: "Infrastructure as Code",
+		items: ["Terraform"]
+	},
+	{
+		category: "DevOps & CI/CD",
+		items: ["Azure DevOps", "GitLab", "GitHub"]
+	},
+	{
+		category: "Identity & Security",
+		items: ["Entra ID", "Active Directory", "Key Vault", "Defender for Cloud"]
+	},
+	{
+		category: "Data Platforms",
+		items: ["Data Factory", "MS SQL"]
+	},
+	{
+		category: "Automation",
+		items: ["PowerShell", "Azure CLI", "Azure Automation"]
+	},
+	{
+		category: "Frameworks",
+		items: ["Cloud Adoption Framework", "Well-Architected Framework"]
+	}
+];
 ---
 
 <!doctype html>
@@ -255,6 +286,51 @@ const typeColors: Record<string, string> = {
 				border-radius: 50%;
 			}
 
+			.tech-stack {
+				margin-bottom: 2.5rem;
+				padding: 1.5rem;
+				background: var(--color-bg-alt);
+				border-radius: 12px;
+				border: 1px solid var(--color-border);
+			}
+
+			.tech-stack h2 {
+				font-size: 1rem;
+				font-weight: 600;
+				margin: 0 0 1rem 0;
+				color: var(--color-text-main);
+			}
+
+			.tech-categories {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+				gap: 1.25rem;
+			}
+
+			.tech-category h3 {
+				font-size: 0.7rem;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				color: var(--color-text-muted);
+				margin: 0 0 0.5rem 0;
+			}
+
+			.tech-items {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.35rem;
+			}
+
+			.tech-item {
+				font-size: 0.8rem;
+				padding: 0.25rem 0.6rem;
+				background: var(--color-bg);
+				border: 1px solid var(--color-border);
+				border-radius: 4px;
+				color: var(--color-text-main);
+			}
+
 			@media (max-width: 600px) {
 				.page-header h1 {
 					font-size: 1.75rem;
@@ -294,6 +370,22 @@ const typeColors: Record<string, string> = {
 			<div class="page-header">
 				<h1>Projects</h1>
 				<p>13 years of building, operating, and leading IT infrastructure across public sector, finance, healthcare, and enterprise.</p>
+			</div>
+
+			<div class="tech-stack">
+				<h2>Tech I Work With</h2>
+				<div class="tech-categories">
+					{techStack.map((category) => (
+						<div class="tech-category">
+							<h3>{category.category}</h3>
+							<div class="tech-items">
+								{category.items.map((item) => (
+									<span class="tech-item">{item}</span>
+								))}
+							</div>
+						</div>
+					))}
+				</div>
 			</div>
 
 			<div class="legend">
