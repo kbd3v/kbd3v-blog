@@ -1,2 +1,2 @@
 export const SITE_TITLE = 'kbd3v';
-export const SITE_DESCRIPTION = 'Cloud architect by day, vibe coder by night. Writing about infrastructure, side projects, and the tools that make development fun.';
+export const SITE_DESCRIPTION = 'Paid to wrangle clouds. Staying up to build things. Writing about infrastructure, side projects, and the tools that make development fun.';
