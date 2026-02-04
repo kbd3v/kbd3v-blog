@@ -102,36 +102,7 @@ const typeColors: Record<string, string> = {
 	enterprise: "#f59e0b"
 };
 
-const techStack = [
-	{
-		category: "Cloud & Infrastructure",
-		items: ["Azure", "Hybrid Cloud", "Landing Zones", "Azure Networking"]
-	},
-	{
-		category: "Infrastructure as Code",
-		items: ["Terraform"]
-	},
-	{
-		category: "DevOps & CI/CD",
-		items: ["Azure DevOps", "GitLab", "GitHub"]
-	},
-	{
-		category: "Identity & Security",
-		items: ["Entra ID", "Active Directory", "Key Vault", "Defender for Cloud"]
-	},
-	{
-		category: "Data Platforms",
-		items: ["Data Factory", "MS SQL"]
-	},
-	{
-		category: "Automation",
-		items: ["PowerShell", "Azure CLI", "Azure Automation"]
-	},
-	{
-		category: "Frameworks",
-		items: ["Cloud Adoption Framework", "Well-Architected Framework"]
-	}
-];
+
 ---
 
 <!doctype html>
@@ -286,51 +257,6 @@ const techStack = [
 				border-radius: 50%;
 			}
 
-			.tech-stack {
-				margin-bottom: 2.5rem;
-				padding: 1.5rem;
-				background: var(--color-bg-alt);
-				border-radius: 12px;
-				border: 1px solid var(--color-border);
-			}
-
-			.tech-stack h2 {
-				font-size: 1rem;
-				font-weight: 600;
-				margin: 0 0 1rem 0;
-				color: var(--color-text-main);
-			}
-
-			.tech-categories {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-				gap: 1.25rem;
-			}
-
-			.tech-category h3 {
-				font-size: 0.7rem;
-				font-weight: 600;
-				text-transform: uppercase;
-				letter-spacing: 0.05em;
-				color: var(--color-text-muted);
-				margin: 0 0 0.5rem 0;
-			}
-
-			.tech-items {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.35rem;
-			}
-
-			.tech-item {
-				font-size: 0.8rem;
-				padding: 0.25rem 0.6rem;
-				background: var(--color-bg);
-				border: 1px solid var(--color-border);
-				border-radius: 4px;
-				color: var(--color-text-main);
-			}
-
 			@media (max-width: 600px) {
 				.page-header h1 {
 					font-size: 1.75rem;
@@ -370,22 +296,6 @@ const techStack = [
 			<div class="page-header">
 				<h1>Projects</h1>
 				<p>13 years of building, operating, and leading IT infrastructure across public sector, finance, healthcare, and enterprise.</p>
-			</div>
-
-			<div class="tech-stack">
-				<h2>Tech I Work With</h2>
-				<div class="tech-categories">
-					{techStack.map((category) => (
-						<div class="tech-category">
-							<h3>{category.category}</h3>
-							<div class="tech-items">
-								{category.items.map((item) => (
-									<span class="tech-item">{item}</span>
-								))}
-							</div>
-						</div>
-					))}
-				</div>
 			</div>
 
 			<div class="legend">
