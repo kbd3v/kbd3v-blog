@@ -4,35 +4,35 @@ description: "How I built a website for Primal Racing Society, a Norwegian car c
 pubDate: "2026-02-07"
 ---
 
-I started Primal Racing Society back in 2023 as a way to bring car enthusiasts together here in Norway. We organize driveouts through some of the country's best roads, trackdays, and casual Cars & Coffee meetups. The community has been growing fast. Our last driveout had 215 RSVPs, but everything was scattered across Facebook posts and Instagram stories. We needed a proper home on the web.
+I started Primal Racing Society back in 2023 because I wanted an excuse to drive good roads with good people. Turns out a lot of other car nerds in Norway wanted the same thing. We started organizing driveouts, trackdays, and Cars & Coffee meetups, and the community just kept growing. Our last driveout pulled 215 RSVPs. Not bad for a group that started with a few guys and a Facebook page.
 
-So I built one. The goal was simple: something bold, fast, and unmistakably car culture. No blog, no CMS, no user accounts. Just a clean single-page site that tells people who we are and how to join.
+The problem was that "a Facebook page" was literally all we had. Event info buried in comment threads, photos scattered across stories, no central place to point people to. So I did what any reasonable person with a car addiction and a code editor would do. I built us a website.
 
-You can see it live at [primalracingsociety.com](https://primalracingsociety.com).
+Check it out at [primalracingsociety.com](https://primalracingsociety.com).
 
 ## What It Does
 
-The site is a single-page experience built around a few key sections:
+It's a single-page site. No login, no CMS, no overthinking it. Just the essentials:
 
-- **Hero:** Full-screen YouTube background video from our Fornebu-to-Tjøme driveout, with a mobile fallback image. Sets the tone immediately.
-- **About:** Three cards covering what PRS does (driveouts, trackdays, and Cars & Coffee), each with scroll-triggered animations.
-- **Events:** A timeline of upcoming and past events with dates, locations, and status badges. Easy to update as the season progresses.
-- **Media:** An embedded YouTube video and a live Instagram feed pulled from the Behold API, displayed as an auto-scrolling marquee.
-- **Join CTA:** Links to Instagram, YouTube, and our Facebook group. No membership fees, no sign-up forms. Just follow and show up.
+- **Hero:** A full-screen background video from our Fornebu-to-Tjøme driveout. On mobile it swaps to a static image so it doesn't murder your data plan.
+- **About:** Three cards breaking down what we actually do (driveouts, trackdays, Cars & Coffee), with some nice scroll animations.
+- **Events:** A timeline showing what's coming up and what already happened. Badges for status, locations, dates. Easy to keep updated.
+- **Media:** Our YouTube recap embedded front and center, plus a live Instagram feed that scrolls on its own via the Behold API.
+- **Join CTA:** Links to Instagram, YouTube, and the Facebook group. No membership fees, no forms. Just show up with something you like driving.
 
 ## The Tech Stack
 
 - **Framework:** Next.js 16 with the App Router
 - **Styling:** Tailwind CSS 4
-- **Animations:** Motion (Framer Motion) for scroll-triggered reveals and staggered transitions
+- **Animations:** Motion (Framer Motion) for scroll-triggered reveals
 - **Icons:** Lucide React
 - **Instagram Feed:** Behold API
 - **Hosting:** Vercel
 
 ## The Vibe
 
-The design leans hard into the motorsport aesthetic. Black background, bold uppercase Oswald headings, and a red-orange accent color. Every section uses `whileInView` animations so the page feels alive as you scroll. On desktop, the hero autoplays a muted driveout video behind the logo. On mobile, it falls back to a static thumbnail to save bandwidth.
+I wanted the site to feel like motorsport, not like a corporate landing page. So it's all black backgrounds, bold uppercase Oswald headings, and a red-orange accent that hits hard. Every section animates in as you scroll, and the hero plays a muted driveout video on desktop. It honestly looks cooler than it had any right to.
 
-The whole thing is a single `page.tsx` composing seven components. No routing complexity, no state management. Just a fast, visual landing page that gets people excited and points them to the right socials.
+The whole thing is seven React components composed in a single `page.tsx`. No routing, no state management, no backend. Just a fast page that makes people want to come to the next meet.
 
-If you're into cars and happen to be in Norway, check out [Primal Racing Society](https://primalracingsociety.com) and join the pack.
+If you're into cars and you're in Norway, come hang out. [primalracingsociety.com](https://primalracingsociety.com)
